@@ -4,6 +4,7 @@
 
 # dotCloud image
 from ubuntu
+MAINTAINER Antoine R. Dumont, ardumont@dotcloud.com
 
 # Update to the latest packages
 run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
