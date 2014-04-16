@@ -17,4 +17,7 @@ run apt-get install -y memcached
 ENTRYPOINT ["memcached"]
 
 # run the container as daemon
-USER "daemon"
+USER daemon
+
+# Expose the current port for memcached
+EXPOSE 11211
