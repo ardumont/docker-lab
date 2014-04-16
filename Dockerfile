@@ -1,2 +1,4 @@
 from ubuntu
-run apt-get update && apt-get upgrade -y
+run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+run apt-get update
+run apt-get install -y memcached
