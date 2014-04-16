@@ -11,4 +11,4 @@ run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 run apt-get update
 
 # Install memcached
-run apt-get install -y memcached
+run apt-get install -y memcached emacs
