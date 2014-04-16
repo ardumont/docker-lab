@@ -1,0 +1,11 @@
+# This is wc
+#
+# VERSION       0.42
+
+# use the ubuntu base image provided by dotCloud
+FROM ubuntu
+
+MAINTAINER Antoine R. Dumont, ardumont@dotcloud.com
+
+# count lines with wc
+ENTRYPOINT ["wc", "-l"]
