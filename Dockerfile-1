@@ -13,5 +13,8 @@ run apt-get update
 # Install memcached
 run apt-get install -y memcached emacs
 
-# we can make memcached run as daemon user
-ENTRYPOINT ["memcached", "-u", "daemon"]
+# memcached run at container startup
+ENTRYPOINT ["memcached"]
+
+# run the container as daemon
+USER "daemon"
