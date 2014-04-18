@@ -12,5 +12,5 @@ RUN apt-get update && apt-get -y upgrade
 # Add oracle java 7 repository
 RUN apt-get -y install openssh-server
 # root as password for root user
-RUN passwd root
+RUN echo root:root | chpasswd
 
