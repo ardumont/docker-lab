@@ -1,0 +1,18 @@
+#
+# VERSION       0.1
+
+FROM ubuntu:saucy-oracle-jdk7
+MAINTAINER Antoine R. Dumont "ardumont@my-mail.org"
+
+# Install tomcat
+RUN apt-get -y install tomcat7
+RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> /etc/default/tomcat7
+
+# We expose the 8080
+EXPOSE 8080
+
+# Install tomcat
+RUN wget http://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war -P /var/lib/tomcat7/webapps
+
+# Start Tomcat, after starting Tomcat the container will stop. So use a 'trick' to keep it running.
+CMD service tomcat7 start && tail -f /var/lib/tomcat7/logs/catalina.out
