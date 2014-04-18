@@ -14,3 +14,6 @@ docker build -t ubuntu:saucy-jenkins-standalone - < Dockerfile-jenkins-standalon
 
 # Now run the jenkins
 docker run -p 8080:8080 ubuntu:saucy-jenkins-standalone
+
+# retrieve the corresponding jenkins-cli from the jenkins running
+wget http://localhost:8080/jnlpJars/jenkins-cli.jar
