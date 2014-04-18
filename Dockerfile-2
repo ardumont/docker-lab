@@ -1,12 +1,11 @@
 # -*- dockerfile -*-
-# Hey Dude at container startup 
+# Hey Dude at container startup
 #
-# VERSION       1.0
+# VERSION       0.1
 
 # dotCloud image
-from ubuntu
-MAINTAINER Antoine R. Dumont, ardumont@dotcloud.com
+FROM ubuntu
+MAINTAINER Antoine R. Dumont, github.com/ardumont
 
 # Say hello when container starts
 ENTRYPOINT echo "Hey Dude!"
-

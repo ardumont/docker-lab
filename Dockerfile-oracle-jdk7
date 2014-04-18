@@ -1,9 +1,10 @@
 # -*- dockerfile -*-
+# saucy with oracle jdk7
 #
 # VERSION       0.1
 
 FROM ubuntu:saucy
-MAINTAINER Antoine R. Dumont "ardumont@my-mail.org"
+MAINTAINER Antoine R. Dumont, github.com/ardumont
 
 # Update Ubuntu
 RUN apt-get update && apt-get -y upgrade

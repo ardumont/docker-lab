@@ -1,5 +1,10 @@
 # -*- dockerfile -*-
+# Jenkins
+#
+# VERSION       0.1
+
 FROM ubuntu:12.04
+MAINTAINER Antoine R. Dumont, github.com/ardumont
 
 RUN apt-get update && apt-get clean
 RUN apt-get install -q -y openjdk-7-jre-headless zip && apt-get clean

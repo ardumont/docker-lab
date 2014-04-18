@@ -1,9 +1,10 @@
 # -*- dockerfile -*-
+# saucy with tomcat7
 #
 # VERSION       0.1
 
 FROM ubuntu:saucy-oracle-jdk7
-MAINTAINER Antoine R. Dumont "ardumont@my-mail.org"
+MAINTAINER Antoine R. Dumont, github.com/ardumont
 
 # Install tomcat
 RUN apt-get -y install tomcat7
