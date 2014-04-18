@@ -1,8 +1,9 @@
+# -*- dockerfile -*-
 #
-# Version       0.1
+# VERSION       0.1
 
-MAINTAINER Antoine R. Dumont "ardumont@my-mail.org"
 FROM ubuntu:saucy
+MAINTAINER Antoine R. Dumont "ardumont@my-mail.org"
 
 # Update Ubuntu
 RUN apt-get update && apt-get -y upgrade
