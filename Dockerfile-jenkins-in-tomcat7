@@ -1,0 +1,16 @@
+# -*- dockerfile -*-
+# Jenkins
+#
+# VERSION       0.1
+
+FROM ubuntu:saucy-tomcat7
+MAINTAINER Antoine R. Dumont, github.com/ardumont
+
+RUN apt-get update && apt-get clean
+RUN apt-get install -q -y openjdk-7-jre-headless zip && apt-get clean
+ADD http://mirrors.jenkins-ci.org/war/1.559/jenkins.war /var/lib/tomcat7/webapps/jenkins.war
+
+EXPOSE 8080
+
+# Start Tomcat, after starting Tomcat the container will stop. So use a 'trick' to keep it running.
+CMD service tomcat7 start && tail -f /var/lib/tomcat7/logs/catalina.out
