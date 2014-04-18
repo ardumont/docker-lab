@@ -14,3 +14,5 @@ RUN apt-get -y install openssh-server
 # root as password for root user
 RUN echo root:root | chpasswd
 
+# Expose the 22 server port
+EXPOSE 22
