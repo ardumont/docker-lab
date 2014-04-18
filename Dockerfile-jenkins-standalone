@@ -15,7 +15,8 @@ RUN apt-get install -q -y gradle
 RUN apt-get clean
 
 # Download Jenkins JAR file
-ADD http://mirrors.jenkins-ci.org/war/1.559/jenkins.war /opt/jenkins.war
+# ADD http://mirrors.jenkins-ci.org/war/1.559/jenkins.war /opt/jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/1.532/jenkins.war /opt/jenkins.war
 RUN ln -sf /jenkins /root/.jenkins
 
 # Start Jenkins
