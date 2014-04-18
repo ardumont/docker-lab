@@ -1,0 +1,16 @@
+# -*- dockerfile -*-
+# Openssh
+#
+# VERSION       0.1
+
+FROM ubuntu:saucy
+MAINTAINER Antoine R. Dumont, github.com/ardumont
+
+# Update Ubuntu
+RUN apt-get update && apt-get -y upgrade
+
+# Add oracle java 7 repository
+RUN apt-get -y install openssh-server
+# root as password for root user
+RUN passwd root
+
