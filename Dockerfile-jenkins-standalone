@@ -3,7 +3,7 @@
 #
 # VERSION       0.1
 
-FROM ubuntu:12.04
+FROM ubuntu:saucy-openssh
 MAINTAINER Antoine R. Dumont, github.com/ardumont
 
 RUN apt-get update && apt-get clean
