@@ -3,15 +3,29 @@
 #
 # VERSION       0.1
 
-FROM ubuntu:saucy-openssh
+FROM ubuntu:saucy-oracle-jdk7
 MAINTAINER Antoine R. Dumont, github.com/ardumont
 
-RUN apt-get update && apt-get clean
-RUN apt-get install -q -y openjdk-7-jre-headless zip && apt-get clean
+# Install JDK
+RUN apt-get update
+RUN apt-get install -q -y openjdk-7-jre-headless
+RUN apt-get install -q -y zip
+RUN apt-get install -q -y git
+RUN apt-get install -q -y gradle
+RUN apt-get clean
+
+# Download Jenkins JAR file
 ADD http://mirrors.jenkins-ci.org/war/1.559/jenkins.war /opt/jenkins.war
 RUN ln -sf /jenkins /root/.jenkins
 
+# Start Jenkins
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
+
+# Expose port 8080
 EXPOSE 8080
+
+# Export "/jenkins" mounting point
 VOLUME ["/jenkins"]
+
+# Default command is empty
 CMD [""]
