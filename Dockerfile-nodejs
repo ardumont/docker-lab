@@ -1,0 +1,12 @@
+# -*- dockerfile -*-
+# Nodejs docker file to permit the use of nodejs tools
+#
+# VERSION       0.1
+
+# Use https://registry.hub.docker.com/u/dockerfile/nodejs/
+FROM dockerfile/nodejs
+
+MAINTAINER Antoine R. Dumont, ardumont@dotcloud.com
+
+# Install jslint
+RUN npm -g install jslint
