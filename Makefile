@@ -1,3 +1,6 @@
+run-daemon:
+	sudo docker --daemon
+
 build-node:
 	sudo docker build -t ardumont/nodejs+jslint - < Dockerfile-nodejs
 
