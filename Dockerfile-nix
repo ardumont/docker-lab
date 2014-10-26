@@ -1,0 +1,19 @@
+# -*- dockerfile -*-
+# Reference nix installation step for a mono user
+# VERSION       0.1
+
+FROM tutum/ubuntu:12.04
+MAINTAINER Antoine R. Dumont, github.com/ardumont
+
+RUN apt-get update && apt-get install -y curl bzip2
+RUN useradd -m -G users -s /bin/bash -d /home/user user
+RUN mkdir /nix; chown user: /nix
+
+RUN su -l user -c "curl https://nixos.org/nix/install | sh"
+# RUN nix-channel --add http://nixos.org/channels/nixpkgs-unstable
+# RUN nix-channel --update
+# RUN nix-env -i nix-shell
+
+USER user
+
+CMD ["/bin/bash", "-i", "-l"]
