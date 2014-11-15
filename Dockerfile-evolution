@@ -1,0 +1,13 @@
+# -*- dockerfile -*-
+# Evolution sandboxed
+# VERSION       0.1
+
+FROM debian
+MAINTAINER Antoine R. Dumont, github.com/ardumont
+
+RUN apt-get update && apt-get install -y evolution evolution-data-server evolution-mapi
+RUN useradd -m -G users -s /bin/bash -d /home/user user
+
+USER user
+
+CMD ["evolution"]
