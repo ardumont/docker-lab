@@ -1,0 +1,19 @@
+# -*- dockerfile -*-
+# SoapUI sandboxed
+# VERSION       0.1
+
+FROM debian
+MAINTAINER Antoine R. Dumont, github.com/ardumont
+
+RUN useradd -m -G users -s /bin/bash -d /home/user user
+RUN apt-get update && apt-get install -y wget curl openssh-server
+RUN mkdir -p /home/user/applications/
+RUN wget http://softlayer-ams.dl.sourceforge.net/project/soapui/soapui/5.0.0/SoapUI-x64-5.0.0.sh -O /home/user/applications/SoapUI-x64-5.0.0.sh ; chmod +x /home/user/applications/SoapUI-x64-5.0.0.sh
+RUN mkdir /home/user/applications/soapui
+RUN chown -R user: /home/user
+EXPOSE 22
+
+USER user
+
+# manual installation after this
+#CMD ["/home/user/applications/soapui/bin/soapui.sh"]
