@@ -7,6 +7,8 @@ MAINTAINER Antoine R. Dumont, github.com/ardumont
 
 RUN apt-get update && apt-get install -y evolution evolution-data-server evolution-mapi
 RUN useradd -m -G users -s /bin/bash -d /home/user user
+RUN apt-get install -y openssh-server
+EXPOSE 22
 
 USER user
 
