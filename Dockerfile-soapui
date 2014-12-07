@@ -2,7 +2,7 @@
 # SoapUI sandboxed
 # VERSION       0.1
 
-FROM debian
+FROM ubuntu
 MAINTAINER Antoine R. Dumont, github.com/ardumont
 
 RUN useradd -m -G users -s /bin/bash -d /home/user user
@@ -11,9 +11,15 @@ RUN mkdir -p /home/user/applications/
 RUN wget http://softlayer-ams.dl.sourceforge.net/project/soapui/soapui/5.0.0/SoapUI-x64-5.0.0.sh -O /home/user/applications/SoapUI-x64-5.0.0.sh ; chmod +x /home/user/applications/SoapUI-x64-5.0.0.sh
 RUN mkdir /home/user/applications/soapui
 RUN chown -R user: /home/user
+RUN apt-get install -y libxrender-dev libxtst-dev firefox
+RUN apt-get install -y libwebkitgtk-dev i965-va-driver suckless-tools
+RUN export _JAVA_AWT_WM_NONREPARENTING=1
+RUN wmname "LG3D"
+RUN export AWT_TOOLKIT=MToolkit
+
 EXPOSE 22
 
-USER user
+#USER user
 
 # manual installation after this
 #CMD ["/home/user/applications/soapui/bin/soapui.sh"]

@@ -1,0 +1,10 @@
+# -*- dockerfile -*-
+# SoapUI sandboxed
+# VERSION       0.1
+
+FROM ardumont/ubuntu-soapui:ready
+MAINTAINER Antoine R. Dumont, github.com/ardumont
+
+USER user
+
+CMD ["/home/user/applications/soapui/bin/soapui.sh"]
