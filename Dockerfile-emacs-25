@@ -1,0 +1,21 @@
+# -*- dockerfile -*-
+# emacs 25
+# VERSION       0.1
+
+FROM nicferrier/emacs
+MAINTAINER Antoine R. Dumont, github.com/ardumont
+
+# prepare user that will run emacs in
+RUN useradd -m -G users -s /bin/bash -d /home/user user
+
+# install latest emacs
+RUN apt-get update
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository -y ppa:ubuntu-elisp/ppa
+RUN apt-get update
+RUN apt-get install -y emacs-snapshot
+
+WORKDIR /home/user
+USER user
+
+CMD ["emacs"]
